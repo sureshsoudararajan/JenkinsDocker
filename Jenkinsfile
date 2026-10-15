@@ -50,6 +50,12 @@ pipeline {
                 sh 'docker push $DOCKER_IMAGE:latest'
             }
         }
+        stage('Pull and run the image'){
+            steps{
+                sh 'docker rm -f DockerCheckProd'
+                sh 'docker run -d --name DockerCheckProd -p 80:80 suresh45808/jenkins-docker-demo'
+            }
+        }
     }
 
     post {
