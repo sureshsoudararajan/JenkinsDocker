@@ -10,3 +10,11 @@ jobs:
     steps:
       - name: print cwd files
         run: ls -la
+
+  present-working-dir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print current dir and username
+        run: |
+          pwd
+          whoami
