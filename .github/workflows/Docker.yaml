@@ -1,0 +1,21 @@
+name: Docker Container Create
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Build Docker Image
+        run: docker build -t frontend-image:latest .
+
+      - name: shows the docker images
+        run: docker image ls
+
+      - name: delete the docker image
+        run: docker rmi frontend-image:latest
