@@ -1,0 +1,12 @@
+name: sample file
+
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  print-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print cwd files
+        run: ls -la
