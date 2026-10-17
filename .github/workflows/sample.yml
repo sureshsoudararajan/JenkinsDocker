@@ -1,8 +1,10 @@
 name: sample file
 
 on:
-  - push
-  - workflow_dispatch
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "5 * * * *"
 
 jobs:
   print-files:
